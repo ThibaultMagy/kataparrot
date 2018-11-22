@@ -4,7 +4,7 @@ public class Parrot {
 
 	private static final double MAXIMUM_SPEED = 24.0;
 	private static final double LOAD_FACTOR = 9.0;
-	private static final double BASE_SPEED = 12.0;
+	protected static final double BASE_SPEED = 12.0;
 	private ParrotTypeEnum type;
 	private int numberOfCoconuts = 0;
 	private double voltage;
@@ -16,11 +16,14 @@ public class Parrot {
 		this.voltage = voltage;
 		this.isNailed = isNailed;
 	}
+	
+	public Parrot() {
+	}
 
 	public double getSpeed() {
 		switch (type) {
 		case EUROPEAN:
-			return BASE_SPEED;
+			throw new RuntimeException("Should be unreachable");
 		case AFRICAN:
 			return Math.max(0, BASE_SPEED - LOAD_FACTOR * numberOfCoconuts);
 		case NORWEGIAN_BLUE:

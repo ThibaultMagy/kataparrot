@@ -2,13 +2,12 @@ package kp.kataparrot;
 
 public class EuropeanParrot extends Parrot {
 
-	public EuropeanParrot(ParrotTypeEnum _type, int numberOfCoconuts, double voltage, boolean isNailed) {
-		super(_type, numberOfCoconuts, voltage, isNailed);
+	public EuropeanParrot() {
+		super();
 	}
 	
 	@Override
 	public double getSpeed() {
-		return 12;
+		return BASE_SPEED;
 	}
-
 }
