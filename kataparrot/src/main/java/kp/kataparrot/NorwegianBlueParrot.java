@@ -3,9 +3,10 @@ package kp.kataparrot;
 public class NorwegianBlueParrot extends Parrot{
 	private double voltage;
 	private boolean isNailed;
+	protected static final double MAXIMUM_SPEED = 24.0;
 	
 	public NorwegianBlueParrot(double voltage, boolean isNailed) {
-		super(ParrotTypeEnum.NORWEGIAN_BLUE);
+		super();
 		this.voltage = voltage;
 		this.isNailed = isNailed;
 	}
@@ -15,7 +16,7 @@ public class NorwegianBlueParrot extends Parrot{
 		if (isNailed)
 			return 0;
 		else
-			return Math.min(MAXIMUM_SPEED, voltage * BASE_SPEED);
+			return Math.min(NorwegianBlueParrot.MAXIMUM_SPEED, voltage * BASE_SPEED);
 	}
 	
 	

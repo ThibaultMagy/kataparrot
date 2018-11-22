@@ -2,14 +2,15 @@ package kp.kataparrot;
 
 public class AfricanParrot extends Parrot {
 	private int numberOfCoconuts;
+	protected static final double LOAD_FACTOR = 9.0;
 
 	public AfricanParrot(int numberOfCoconuts) {
-		super(ParrotTypeEnum.AFRICAN);
+		super();
 		this.numberOfCoconuts = numberOfCoconuts;
 	}
 	
 	@Override
 	public double getSpeed() {
-		return Math.max(0, BASE_SPEED - LOAD_FACTOR * numberOfCoconuts);
+		return Math.max(0, BASE_SPEED - AfricanParrot.LOAD_FACTOR * numberOfCoconuts);
 	}
 }
